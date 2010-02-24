@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Calling make"
+
+make $@
+
+if [ $? -eq 0 ]; then
+    notify-send "make $@ completed"
+else
+    notify-send "make $@ failed"
+fi

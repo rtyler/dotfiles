@@ -1,0 +1,15 @@
+#!/bin/bash
+
+FILENAME="mtube_tmp"
+
+~/bin/youtube-dl -b -o "${FILENAME}.%(ext)s" "$1"
+
+if [ -f "${FILENAME}.flv" ]; then
+    FILENAME="${FILENAME}.flv"
+fi
+if [ -f "${FILENAME}.mp4" ]; then
+    FILENAME="${FILENAME}.mp4"
+fi
+
+mplayer $FILENAME && rm -f $FILENAME
+
