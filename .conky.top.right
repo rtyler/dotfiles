@@ -11,7 +11,7 @@ ${if_up eth0}^fg(\#D0F0C0)^i(/home/demizer/.dzen2/sm4tik/net_wired.xbm) ^fg(\#CF
 ^fg(\#D0F0C0)^i(/home/demizer/.dzen2/sm4tik/net_up_01.xbm) ^fg()${upspeed}^fg(\#3B444B) Ξ "
 
 # Show the volume indicator as a bar
-$$E "^fg(\#D0F0C0)^i(/home/demizer/.dzen2/sm4tik/spkr_01.xbm)^fg() ${exec volume_level.sh}^fg(\#3B444B) Ξ "
+#$$E "^fg(\#D0F0C0)^i(/home/demizer/.dzen2/sm4tik/spkr_01.xbm)^fg() ${exec volume_level.sh}^fg(\#3B444B) Ξ "
 
 # What time is it??
 $$E "^fg(\#D0F0C0)^i(/home/demizer/.dzen2/sm4tik/clock.xbm)^fg() ${time %d/%m/%y} ${time %H:%M} "

@@ -5,29 +5,29 @@ TEXT
 E='echo -n'
 
 # CPU Freq
-$$E '^fg(\#D0F0C0)^i(/home/demizer/.dzen2/sm4tik/cpu.xbm)'
-$$E '^fg(\#CFCFCF) Core i7 ^fg(\#F88379) @ ^fg() ${freq_g 1} ^fg(\#CFCFCF)Ghz'
+$$E '^fg(\#D0F0C0)^i(/home/tyler/.dzen2/sm4tik/cpu.xbm)'
+$$E '^fg(\#CFCFCF) Core 2 Duo ^fg(\#F88379) @ ^fg() ${freq_g 1} ^fg(\#CFCFCF)Ghz'
 
 # CPU usage percent
 $$E '  ^fg(\#F88379)Usage: ^fg()${cpu}%^fg()'
 
 # I have a core i7, hwmon, i2c, and acpi do not pick up the correct values
-$$E '  ^fg(\#F88379)Temp: ^fg()${execi 5 /home/demizer/bin/cpu_temp.sh}^fg(red)° '
+$$E '  ^fg(\#F88379)Temp: ^fg()${execi 5 /home/tyler/bin/cpu_temp.sh}^fg(red)° '
 
 # Add new segment to the graph file
-echo ${cpu} | gdbar -fg '\#0296F8' -bg '\#3B444B' -s v -h 16 -sw 2 >> /tmp/.dzen2cpugraph
-
-# Print last 15 segments dequeuing the oldest one
-QUEUE=`tail -n 15 /tmp/.dzen2cpugraph`
-ISFIRST=true
-for ITEM in $$QUEUE; do
-  $$E $$ITEM
-  if [ $$ISFIRST = true ]; then
-    echo $$ITEM >/tmp/.dzen2cpugraph
-    ISFIRST=false
-  fi
-  echo $$ITEM >>/tmp/.dzen2cpugraph
-done
+#echo ${cpu} | gdbar -fg '\#0296F8' -bg '\#3B444B' -s v -h 16 -sw 2 >> /tmp/.dzen2cpugraph
+#
+## Print last 15 segments dequeuing the oldest one
+#QUEUE=`tail -n 15 /tmp/.dzen2cpugraph`
+#ISFIRST=true
+#for ITEM in $$QUEUE; do
+#  $$E $$ITEM
+#  if [ $$ISFIRST = true ]; then
+#    echo $$ITEM >/tmp/.dzen2cpugraph
+#    ISFIRST=false
+#  fi
+#  echo $$ITEM >>/tmp/.dzen2cpugraph
+#done
 
 # $$E '^ib(1)^pa(36;0)'
 $$E '^ib(1)'
@@ -37,18 +37,6 @@ $$E ' '
 echo ${cpu cpu 0} | gdbar -fg '\#0296F8' -bg '\#3B444B' -s p -w 16 -nonl
 $$E ' '
 echo ${cpu cpu 1} | gdbar -fg '\#0296F8' -bg '\#3B444B' -s p -w 16 -nonl
-$$E ' '
-echo ${cpu cpu 2} | gdbar -fg '\#0296F8' -bg '\#3B444B' -s p -w 16 -nonl
-$$E ' '
-echo ${cpu cpu 3} | gdbar -fg '\#0296F8' -bg '\#3B444B' -s p -w 16 -nonl
-$$E ' '
-echo ${cpu cpu 4} | gdbar -fg '\#0296F8' -bg '\#3B444B' -s p -w 16 -nonl
-$$E ' '
-echo ${cpu cpu 5} | gdbar -fg '\#0296F8' -bg '\#3B444B' -s p -w 16 -nonl
-$$E ' '
-echo ${cpu cpu 6} | gdbar -fg '\#0296F8' -bg '\#3B444B' -s p -w 16 -nonl
-$$E ' '
-echo ${cpu cpu 7} | gdbar -fg '\#0296F8' -bg '\#3B444B' -s p -w 16 -nonl
 $$E ' '
 
 echo
