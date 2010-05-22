@@ -7,7 +7,7 @@ Xft.hintstyle:  hintslight
 
 ! urxvt
 
-URxvt.font:                     xft:Inconsolata:pixelsize=15
+URxvt.font:                     xft:Inconsolata:pixelsize=16
 URxvt*termName:                 xterm-256color
 URxvt*urlLauncher:              chromium
 URxvt*depth:                    32
