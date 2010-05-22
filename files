@@ -15,3 +15,6 @@ bin/youtube-dl
 .xmobarrc
 .conky.top.right
 .conky.bot.left
+bin/volume_level.sh
+.dzen2
+bin/cpu_temp.sh
