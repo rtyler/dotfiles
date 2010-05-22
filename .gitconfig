@@ -1,0 +1,71 @@
+[user]
+	name = R. Tyler Ballance
+	email = tyler@monkeypox.org
+	signingkey = 3F51E16F
+[github]
+	user = rtyler
+[pack]
+    threads = 2
+[core]
+    packedgitlimit = 1G
+	pager = less -R
+    excludesfile = /home/tyler/.gitignore
+[alias]
+    patch = !sh -c 'git format-patch --stdout $0...$0~'
+    mpatch = !sh -c 'git format-patch $0...$0~ --suffix=.patch.temp && git send-email *.patch.temp $1 && rm *.patch.temp'
+    mpatchset = !sh -c 'git format-patch $0...$1 --suffix=.patch.temp && git send-email *.patch.temp $2 && rm *.patch.temp'
+    btrack = !sh -c 'git fetch origin && git branch --track $0 origin/$0'
+    pcommit = "!f() { branch=$(git symbolic-ref HEAD | sed 's/refs\\/heads\\///g'); git commit $@ && git push origin $branch; }; f"
+    conedit = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+    conadd = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+    retrack = "!f() { branch=$(git symbolic-ref HEAD | sed 's/refs\\/heads\\///g'); git config branch.$branch.remote origin; git config branch.$branch.merge refs\\/heads\\/$branch; }; f"
+    pushme = "!f() { branch=$(git symbolic-ref HEAD | sed 's/refs\\/heads\\///g'); git push origin $branch; }; f"
+    ci = commit
+    unique = "!f() { branch=$(git symbolic-ref HEAD | sed 's/refs\\/heads\\///g'); git log origin/master...$branch $@; }; f"
+    dunique = "!f() { branch=$(git symbolic-ref HEAD | sed 's/refs\\/heads\\///g'); git diff origin/master...$branch $@; }; f"
+    mergelog = "!f() { git log $2 $1^2 --not $1^1; }; f"
+    pup = "!f(){ branch=$(git symbolic-ref HEAD | sed 's/refs\\/heads\\///g');git push -f $1 +${branch}:pu;}; f"
+    gerrit = "!f() { git push gerrit HEAD:refs/for/master; }; f"
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    pick = cherry-pick
+    who = shortlog -s --
+
+    #log
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    flg = log -M --summary --stat --date=relative --abbrev-commit
+    plg = log -p
+
+    #diff
+    changes=diff --name-status -r
+    diffstat=diff --stat -r
+    last  = cat-file commit HEAD
+
+[sendemail]
+    confirm = auto
+    smtpencryption = ssl
+    smtpserver = mail.geekisp.com
+    smtpuser = tyler@monkeypox.org
+
+[color]
+    ui = always
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
