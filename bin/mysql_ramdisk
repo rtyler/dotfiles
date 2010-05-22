@@ -1,10 +1,14 @@
 #!/bin/bash +x
 
 sudo mkdir -p /media/ramdisk
-sudo mount -t tmpfs none /media/ramdisk -o size=512m
+sudo mount -t tmpfs none /media/ramdisk -o size=128m
 mkdir /media/ramdisk/mysql_data
 rm -f /media/ramdisk/query.log
 
 mysql_install_db --datadir=/media/ramdisk/mysql_data
-mysqld --socket=/tmp/mysql.sock --datadir=/media/ramdisk/mysql_data  --general_log --general_log_file=/media/ramdisk/query.log
+
+# Debug logging
+#mysqld --socket=/tmp/mysql.sock --datadir=/media/ramdisk/mysql_data  --general_log --general_log_file=/media/ramdisk/query.log
+
+mysqld --socket=/tmp/mysql.sock --datadir=/media/ramdisk/mysql_data
 
