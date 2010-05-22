@@ -1,0 +1,57 @@
+! Xft settings ---------------------------------------------------------------
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+! urxvt
+
+URxvt.font:                     xft:Inconsolata:pixelsize=15
+URxvt*termName:                 xterm-256color
+URxvt*urlLauncher:              chromium
+URxvt*depth:                    32
+URxvt*cursorColor:              grey
+URxvt*loginShell:               False
+URxvt*visualBell:               False
+URxvt*scrollBar:                False
+URxvt*scrollTtyOutput:          False
+URxvt*scrollTtyKeypress:        True
+URxvt*scrollWithBuffer:         True
+URxvt*cursorBlink:              False
+URxvt*saveLines:                32767
+URxvt*background:               rgba:2222/2222/2222/eeee
+URxvt*foreground:               #F0F8FF
+!URxvt*transparent:              true
+!URxvt*fading:                   20
+!URxvt*shading:                  15
+
+!thayer colors
+
+!black
+!*color0:    #1B1D1E
+!*color8:    #505354
+*color0:     #262729
+*color8:     #554444
+
+!red
+*color1:    #F92672
+*color9:    #FF669D
+!green
+*color2:    #A6E22E
+*color10:   #BEED5F
+!yellow
+*color3:    #FD971F
+*color11:   #E6DB74
+!blue
+*color4:    #66D9EF
+*color12:   #66D9EF
+!magenta
+*color5:    #9E6FFE
+*color13:   #9E6FFE
+!cyan
+*color6:    #5E7175
+*color14:   #A3BABF
+!white
+*color7:    #CCCCC6
+*color15:   #F8F8F2

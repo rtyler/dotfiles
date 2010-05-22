@@ -1,0 +1,19 @@
+out_to_console yes
+update_interval 1.0
+
+TEXT
+E='echo -n'
+
+# Show MPD status (if song is playing)
+$$E " "
+$$E "${if_mpd_playing}^fg(\#D0F0C0)^i(/home/demizer/.dzen2/sm4tik/phones.xbm) \
+^fg()${mpd_artist}^fg(\#F88379) - ^fg()${mpd_title}^fg(\#3B444B) Ξ ${endif}"
+
+# Show the uptime
+$$E '^fg(\#D0F0C0)^i(/home/demizer/.dzen2/sm4tik/clock.xbm)^fg(\#CFCFCF) Uptime: ^fg()${uptime_short}^fg(\#3B444B) Ξ '
+
+# Show / and /home usages
+$$E "^fg(\#D0F0C0)^i(/home/demizer/.dzen2/sm4tik/diskette.xbm)^fg(\#CFCFCF) root: ^fg()${fs_used_perc /}% \
+^fg(\#F88379)- ^fg(\#CFCFCF)home: ^fg()${fs_used_perc /home}%^fg(\#3B444B) Ξ "
+
+echo
