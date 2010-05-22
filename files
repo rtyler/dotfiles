@@ -3,3 +3,9 @@
 .vimrc
 .gitconfig
 .gitignore
+bin/volume
+bin/mtube
+bin/mysql_ramdisk
+bin/nmake
+bin/xrun
+bin/youtube-dl

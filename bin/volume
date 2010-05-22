@@ -1,0 +1,3 @@
+#!/bin/bash
+
+alsamixer -c 0
