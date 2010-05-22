@@ -87,7 +87,7 @@ myWorkspaces    = ["1:chat", "2:code", "3:web", "4:rss"] ++ map show [5..9]
 
 -- Colors
 myFont = "-*-terminus-*-*-*-*-12-*-*-*-*-*-iso8859-*"
-myNormalBorderColor = "#000000"
+myNormalBorderColor = "#666666"
 myFocusedBorderColor = "#004D99"
 myDzenFGColor = "#0296F8"
 myDzenBGColor = "#CCCCCC"
