@@ -1,0 +1,3 @@
+#!/bin/sh
+
+gpg --gen-random 1 16 | gpg --enarmor | sed -n 5p
