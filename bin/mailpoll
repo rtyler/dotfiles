@@ -1,0 +1,12 @@
+#!/bin/sh
+
+DELAY=60
+
+source ~/envs/mail/bin/activate
+
+while true; do
+    offlineimap;
+    sleep ${DELAY};
+    reset;
+done
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Disabling LVDS for games"
+xrandr --output LVDS --off
+

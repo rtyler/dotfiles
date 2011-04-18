@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+#urxvt-256color -fn "xft:ProggyCleanTT"
+urxvt-256color -fn "7x13,xft:Consolas"
+
+
+#urxvt-256color -fn "-xos4-terminus-medium-r-normal--14-*-*-*-*-*-iso10646-1"
