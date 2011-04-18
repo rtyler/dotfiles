@@ -1,30 +1,37 @@
 ! Xft settings ---------------------------------------------------------------
 Xft.dpi:        96
-Xft.antialias:  true
+Xft.antialias:  false
 Xft.rgba:       rgb
-Xft.hinting:    true
+Xft.hinting:    false
 Xft.hintstyle:  hintslight
 
 ! urxvt
 
-URxvt.font:                     xft:Inconsolata:pixelsize=16
+!URxvt.font:                     xft:Inconsolata:pixelsize=12
+!URxvt*font                      xft:terminus:pixelsize=14
+!URxvt*font:                     xft:ProggyTinyTT:pixelsize=12
 URxvt*termName:                 xterm-256color
 URxvt*urlLauncher:              chromium
 URxvt*depth:                    32
 URxvt*cursorColor:              grey
+URxvt*externalBorder:           1
 URxvt*loginShell:               False
-URxvt*visualBell:               False
-URxvt*scrollBar:                False
+URxvt*visualBell:               True
+URxvt*scrollBar:                True
 URxvt*scrollTtyOutput:          False
 URxvt*scrollTtyKeypress:        True
 URxvt*scrollWithBuffer:         True
-URxvt*cursorBlink:              False
+URxvt*cursorBlink:              True
+URxvt*cursorUnderline:          False
 URxvt*saveLines:                32767
-URxvt*background:               rgba:2222/2222/2222/eeee
+!URxvt*background:               rgba:2222/2222/2222/eeee
+URxvt*background:               #000000
 URxvt*foreground:               #F0F8FF
-!URxvt*transparent:              true
-!URxvt*fading:                   20
-!URxvt*shading:                  15
+URxvt*transparent:              False
+URxvt*fading:                   20
+URxvt*shading:                  15
+!URxvt*colorBD: red
+!URxvt*colorUL: blue
 
 !thayer colors
 
