@@ -6,11 +6,11 @@ import subprocess
 import sys
 import time
 
-DELAY = 60
+DELAY = 30
 INBOXES = ('~/Mail/Personal/INBOX', '~/Mail/Apture/INBOX',)
 
-def notify(message):
-    subprocess.call(['notify-send', '-i', 'mail_new', '-t', '5000', message])
+def notify(subject, message):
+    subprocess.call(['notify-send', '-i', 'mail_new', '-t', '5000', subject, message])
 
 def main():
     mail_sets = dict(((box, set()) for box in INBOXES))
@@ -25,17 +25,44 @@ def main():
             new_set = set(os.listdir(newpath))
             old_set = mail_sets[box]
             print ('old, new', len(old_set), len(new_set))
-            diff = old_set.difference(new_set)
+            diff = new_set.difference(old_set)
 
             if diff:
-                message = '%s has %d new ' % (box, len(diff))
-                if len(diff) == 1:
-                    message += 'mail'
-                else:
-                    message += 'mails'
+                noun = 'mail'
+                if len(diff) > 1:
+                    noun += 's'
 
-                print ('Notifying', message)
-                notify(message)
+                title = '%d new %s in %s' % (len(diff), noun, box.replace('~/Mail/', ''))
+                message = 'Mail from:'
+                senders = set()
+
+                for f in diff:
+                    filepath = os.path.join(newpath, f)
+
+                    if not os.path.exists(filepath):
+                        print 'Looks like "%s" no longer exists' % f
+                        continue
+
+                    with open(filepath, 'r') as fd:
+                        for mail_line in fd.xreadlines():
+                            if mail_line.startswith('From: '):
+                                pieces = mail_line.strip().split('From: ')
+                                if not pieces:
+                                    continue
+
+                                from_name = ' '.join(pieces[1:])
+
+                                if not from_name.startswith('<'):
+                                    from_name = from_name.split('<')[0]
+
+                                senders.add(from_name.strip())
+                                break
+
+                for sender in senders:
+                    message += '\\n%s' % sender
+
+                print ('Notifying', title, message)
+                notify(title, message)
 
             mail_sets[box] = new_set
 
