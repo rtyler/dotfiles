@@ -2,4 +2,4 @@
 
 echo "Auto-configuring display for work"
 #xrandr --output LVDS --auto --output VGA --rotate left --auto --right-of LVDS
-xrandr --output LVDS1 --auto --output VGA1 --rotation normal --auto --above LVDS1
+xrandr --output LVDS1 --auto --output VGA1 --rotation normal --auto --right-of LVDS1
