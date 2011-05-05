@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DELAY=60
+DELAY=30
 
 source ~/envs/mail/bin/activate
 
