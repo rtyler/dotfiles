@@ -1,7 +1,7 @@
-#!/bin/bash +x
+#!/bin/bash -x
 
 sudo mkdir -p /media/ramdisk
-sudo mount -t tmpfs none /media/ramdisk -o size=96m
+sudo mount -t tmpfs none /media/ramdisk -o size=128m
 mkdir /media/ramdisk/mysql_data
 rm -f /media/ramdisk/query.log
 
@@ -12,3 +12,6 @@ mysql_install_db --datadir=/media/ramdisk/mysql_data
 
 mysqld --socket=/tmp/mysql.sock --datadir=/media/ramdisk/mysql_data
 
+sleep 2
+
+sudo umount /media/ramdisk
