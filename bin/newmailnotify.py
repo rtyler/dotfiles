@@ -1,16 +1,15 @@
 #!/usr/bin/env python
 
-import json
 import os
 import subprocess
 import sys
 import time
 
-DELAY = 30
-INBOXES = ('~/Mail/Personal/INBOX', '~/Mail/Apture/INBOX',)
+DELAY = 20
+INBOXES = ('~/Mail/Personal/INBOX', '~/Mail/Lookout/INBOX')
 
 def notify(subject, message):
-    subprocess.call(['notify-send', '-i', 'mail_new', '-t', '5000', subject, message])
+    subprocess.call(['notify-send', '-i', 'mail_new', '-t', '7000', subject, message])
 
 def main():
     mail_sets = dict(((box, set()) for box in INBOXES))
@@ -24,7 +23,8 @@ def main():
 
             new_set = set(os.listdir(newpath))
             old_set = mail_sets[box]
-            print ('old, new', len(old_set), len(new_set))
+            if len(new_set) > 0:
+                print ('old, new', len(old_set), len(new_set))
             diff = new_set.difference(old_set)
 
             if diff:
@@ -66,7 +66,6 @@ def main():
 
             mail_sets[box] = new_set
 
-        print '>> Finished checking'
         time.sleep(DELAY)
     return 0
 
