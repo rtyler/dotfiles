@@ -26,10 +26,10 @@
     fetchall = "!f() { for r in .git/refs/remotes/*; do R=$(echo $r|cut -d / -f4);echo \"> Fetching from '$R'\";git fetch $R;done };f"
     newproj = "!f() { mkdir $1 && cd $1 && git init && touch README.markdown && git add README.markdown && git commit -m 'Initial commit' && echo && echo 'Project created';}; f"
     st = status
-    ci = commit
+    ci = commit -v
     br = branch
     co = checkout
-    df = diff
+    df = difftool
     pick = cherry-pick
     who = shortlog -s --
 
@@ -68,4 +68,7 @@
     added = yellow
     changed = green
     untracked = cyan
-
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
