@@ -1,0 +1,11 @@
+#!/bin/sh
+
+DELAY=3000
+
+eval $@
+
+if [ $? -eq 0 ]; then
+    notify-send -i weather-clear -t $DELAY "Success running \`$1\`"
+else
+    notify-send -i weather-storm -t $DELAY "Failed running \`$1\`"
+fi

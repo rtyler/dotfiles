@@ -1,0 +1,10 @@
+#!/bin/sh
+
+URL=$1
+
+if [ "$URL" = "" ]; then
+    URL=$(xclip -o)
+fi
+
+
+curl "$URL" | vim -

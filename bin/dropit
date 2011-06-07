@@ -1,0 +1,16 @@
+#!/bin/sh
+
+DIRECTORY="public"
+URL_BASE="http://strongspace.com/rtyler/${DIRECTORY}"
+
+if [ "$1" = "" ]; then
+    echo "***> You need to provide a file as the first argument"
+    exit 1
+fi
+
+scp "$1" strongspace:${DIRECTORY}
+
+URL="${URL_BASE}/$1"
+
+echo ">> Copying \"$URL\" to the clipboard"
+echo $URL | xclip -i

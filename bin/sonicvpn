@@ -1,0 +1,12 @@
+#!/bin/sh
+
+sudo /usr/sbin/vpnc /home/tyler/.vpnc.conf
+
+message="VPN died unexpectedly"
+
+if [ $? -eq 0 ]; then
+    message="VPN exited successfully"
+fi
+
+notify-send -t 5000 "${message}"
+

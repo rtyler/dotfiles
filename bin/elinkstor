@@ -1,0 +1,10 @@
+#!/bin/sh
+
+PROXY="localhost:8118"
+DEST="https://check.torproject.org"
+
+if [ "$1" != "" ]; then
+    DEST="$1"
+fi
+
+HTTP_PROXY=$PROXY HTTPS_PROXY=$PROXY elinks "$DEST"

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ links -dump "http://spaceflight.nasa.gov/realdata/sightings/cities/view.cgi?country=United_States&region=California&city=Berkeley" | sed -n '/--/,/--/p'
+

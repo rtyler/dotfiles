@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PROXY="localhost:8118"
+
+HTTP_PROXY=$PROXY HTTPS_PROXY=$PROXY wget $@
