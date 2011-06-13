@@ -1,11 +1,14 @@
 #!/bin/sh
 
 DELAY=3000
+if [ "$COMMAND" = "" ]; then
+    COMMAND="$1"
+fi
 
-eval $@
+"$@"
 
 if [ $? -eq 0 ]; then
-    notify-send -i weather-clear -t $DELAY "Success running \`$1\`"
+    notify-send -i weather-clear -t $DELAY "Success running \`$COMMAND\`"
 else
-    notify-send -i weather-storm -t $DELAY "Failed running \`$1\`"
+    notify-send -i weather-storm -t $DELAY "Failed running \`$COMMAND\`"
 fi
