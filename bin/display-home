@@ -2,3 +2,14 @@
 
 echo "Auto-configuring display for home"
 xrandr --output LVDS1 --auto --output VGA1 --auto --rotation normal --left-of LVDS1
+
+killall i3status || true
+
+i3status -c ~/.i3status/config | dzen2 -fg white \
+                            -ta r \
+                            -w 990 \
+                            -fn "-misc-fixed-medium-r-normal--13-120-75-75-C-70-iso8859-1" \
+                            -x 680 \
+                            -y 1035 &
+
+battwaste
