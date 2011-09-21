@@ -1,64 +1,210 @@
 ! Xft settings ---------------------------------------------------------------
 Xft.dpi:        96
-Xft.antialias:  false
+Xft.antialias:  true
 Xft.rgba:       rgb
-Xft.hinting:    false
+Xft.hinting:    true
 Xft.hintstyle:  hintslight
 
-! urxvt
+!! urxvt
+!
+!!URxvt.font:                     xft:Inconsolata:pixelsize=12
+!!URxvt*font                      xft:terminus:pixelsize=14
+!!URxvt*font:                     xft:ProggyTinyTT:pixelsize=12
+!URxvt*termName:                 xterm-256color
+!URxvt*urlLauncher:              /usr/bin/chromium
+!URxvt*depth:                    32
+!URxvt*cursorColor:              grey
+!URxvt*externalBorder:           1
+!URxvt*loginShell:               False
+!URxvt*visualBell:               True
+!URxvt*scrollBar:                True
+!URxvt*scrollTtyOutput:          False
+!URxvt*scrollTtyKeypress:        True
+!URxvt*scrollWithBuffer:         True
+!URxvt*cursorBlink:              True
+!URxvt*cursorUnderline:          False
+!URxvt*saveLines:                32767
+!!URxvt*background:               rgba:2222/2222/2222/eeee
+!URxvt*background:               #000000
+!URxvt*foreground:               #F0F8FF
+!URxvt*transparent:              False
+!URxvt*fading:                   10
+!URxvt*shading:                  0
+!!URxvt*colorBD: red
+!!URxvt*colorUL: blue
+!
+!!thayer colors
+!
+!!black
+!!*color0:    #1B1D1E
+!!*color8:    #505354
+!*color0:     #262729
+!*color8:     #554444
+!
+!!red
+!*color1:    #F92672
+!*color9:    #FF669D
+!!green
+!*color2:    #A6E22E
+!*color10:   #BEED5F
+!!yellow
+!*color3:    #FD971F
+!*color11:   #E6DB74
+!!blue
+!*color4:    #66D9EF
+!*color12:   #66D9EF
+!!magenta
+!*color5:    #9E6FFE
+!*color13:   #9E6FFE
+!!cyan
+!*color6:    #5E7175
+!*color14:   #A3BABF
+!!white
+!*color7:    #CCCCC6
+!*color15:   #F8F8F2
 
-!URxvt.font:                     xft:Inconsolata:pixelsize=12
-!URxvt*font                      xft:terminus:pixelsize=14
-!URxvt*font:                     xft:ProggyTinyTT:pixelsize=12
-URxvt*termName:                 xterm-256color
-URxvt*urlLauncher:              chromium
-URxvt*depth:                    32
-URxvt*cursorColor:              grey
-URxvt*externalBorder:           1
-URxvt*loginShell:               False
-URxvt*visualBell:               True
-URxvt*scrollBar:                True
-URxvt*scrollTtyOutput:          False
-URxvt*scrollTtyKeypress:        True
-URxvt*scrollWithBuffer:         True
+! ZENBURN
+URxvt.foreground: #f0f0f0
+
+!URxvt.depth: 32
+URxvt*background: #0f0f0f
+
+URxvt.saveLines:32767
+URxvt.scrollBar: true
 URxvt*cursorBlink:              True
-URxvt*cursorUnderline:          False
-URxvt*saveLines:                32767
-!URxvt*background:               rgba:2222/2222/2222/eeee
-URxvt*background:               #000000
-URxvt*foreground:               #F0F8FF
-URxvt*transparent:              False
-URxvt*fading:                   20
-URxvt*shading:                  15
-!URxvt*colorBD: red
-!URxvt*colorUL: blue
+URxvt*fading: 10
+URxvt*shading: 0
 
-!thayer colors
+
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: /usr/bin/chromium
+URxvt*termName:                 xterm-256color
+URxvt*visualBell:               True
+URxvt.matcher.button: 1
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+
+URxvt*colorUL: #c5f779
+URxvt*underlineColor: #c5f779
+
+URxvt*color0:   #3f3f3f
+URxvt*color1:       #705050
+URxvt*color2:     #60b48a
+URxvt*color3:    #dfaf8f
+URxvt*color4:      #506070
+URxvt*color5:   #dc8cc3
+URxvt*color6:      #8cd0d3
+URxvt*color7:     #DCDCCC
+
+URxvt*color8:      #709080
+URxvt*color9:      #cc9393
+URxvt*color10:    #7f9f7f
+URxvt*color11:   #f0dfaf
+URxvt*color12:     #94bff3
+URxvt*color13:  #ec93d3
+URxvt*color14:    #93e0e3
+URxvt*color15:          #ffffff
 
 !black
-!*color0:    #1B1D1E
-!*color8:    #505354
-*color0:     #262729
-*color8:     #554444
-
+xterm*color0:         #353535
+xterm*color8:         #666666
 !red
-*color1:    #F92672
-*color9:    #FF669D
+xterm*color1:         #AE4747
+xterm*color9:         #EE6363
 !green
-*color2:    #A6E22E
-*color10:   #BEED5F
-!yellow
-*color3:    #FD971F
-*color11:   #E6DB74
+xterm*color2:         #556B2F
+xterm*color10:        #9ACD32
+!brown/yellow
+xterm*color3:         #DAA520
+xterm*color11:        #FFC125
 !blue
-*color4:    #66D9EF
-*color12:   #66D9EF
+xterm*color4:         #6F99B4
+xterm*color12:        #7C96B0
 !magenta
-*color5:    #9E6FFE
-*color13:   #9E6FFE
+xterm*color5:         #8B7B8B
+xterm*color13:        #D8BFD8
 !cyan
-*color6:    #5E7175
-*color14:   #A3BABF
+xterm*color6:         #A7A15E
+xterm*color14:        #F0E68C
 !white
-*color7:    #CCCCC6
-*color15:   #F8F8F2
+xterm*color7:         #DDDDDD
+xterm*color15:        #FFFFFF
+
+
+! SOLARIZED
+!! drop in Solarized colorscheme for Xresources/Xdefaults
+
+!!SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
+!!--------- ------- ---- -------  ----------- ---------- ----------- -----------
+!!base03    #002b36  8/4 brblack  234 #1c1c1c 15 -12 -12   0  43  54 193 100  21
+!!base02    #073642  0/4 black    235 #262626 20 -12 -12   7  54  66 192  90  26
+!!base01    #586e75 10/7 brgreen  240 #585858 45 -07 -07  88 110 117 194  25  46
+!!base00    #657b83 11/7 bryellow 241 #626262 50 -07 -07 101 123 131 195  23  51
+!!base0     #839496 12/6 brblue   244 #808080 60 -06 -03 131 148 150 186  13  59
+!!base1     #93a1a1 14/4 brcyan   245 #8a8a8a 65 -05 -02 147 161 161 180   9  63
+!!base2     #eee8d5  7/7 white    254 #e4e4e4 92 -00  10 238 232 213  44  11  93
+!!base3     #fdf6e3 15/7 brwhite  230 #ffffd7 97  00  10 253 246 227  44  10  99
+!!yellow    #b58900  3/3 yellow   136 #af8700 60  10  65 181 137   0  45 100  71
+!!orange    #cb4b16  9/3 brred    166 #d75f00 50  50  55 203  75  22  18  89  80
+!!red       #dc322f  1/1 red      160 #d70000 50  65  45 220  50  47   1  79  86
+!!magenta   #d33682  5/5 magenta  125 #af005f 50  65 -05 211  54 130 331  74  83
+!!violet    #6c71c4 13/5 brmagenta 61 #5f5faf 50  15 -45 108 113 196 237  45  77
+!!blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
+!!cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
+!!green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
+
+!#define S_base03        #002b36
+!#define S_base02        #073642
+!#define S_base01        #586e75
+!#define S_base00        #657b83
+!#define S_base0         #839496
+!#define S_base1         #93a1a1
+!#define S_base2         #eee8d5
+!#define S_base3         #fdf6e3
+!#define S_yellow        #b58900
+!#define S_orange        #cb4b16
+!#define S_red           #dc322f
+!#define S_magenta       #d33682
+!#define S_violet        #6c71c4
+!#define S_blue          #268bd2
+!#define S_cyan          #2aa198
+!#define S_green         #859900
+!
+!*background:            S_base03
+!*foreground:            S_base00
+!*fading:                40
+!*fadeColor:             S_base03
+!*cursorColor:           S_base1
+!*pointerColorBackground:S_base01
+!*pointerColorForeground:S_base1
+!
+!!! black dark/light
+!*color0:                S_base02
+!*color8:                S_base03
+!
+!!! red dark/light
+!*color1:                S_red
+!*color9:                S_orange
+!
+!!! green dark/light
+!*color2:                S_green
+!*color10:               S_base01
+!
+!!! yellow dark/light
+!*color3:                S_yellow
+!*color11:               S_base00
+!
+!!! blue dark/light
+!*color4:                S_blue
+!*color12:               S_base0
+!
+!!! magenta dark/light
+!*color5:                S_magenta
+!*color13:               S_violet
+!
+!!! cyan dark/light
+!*color6:                S_cyan
+!*color14:               S_base1
+!
+!!! white dark/light
+!*color7:                S_base2
+!*color15:               S_base3
