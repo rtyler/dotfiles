@@ -111,7 +111,7 @@ defnonblock 5
 # screen -t daemon 9 tail -f /var/log/daemon.log
 
 shelltitle -
-hardstatus alwayslastline "%{kr} %H %{ky} load[%l] %{kg} %d.%m.%Y %c %{+b}%{yb} %=%?%-w%?[%n%f %t]%?%+w%? "
+hardstatus alwayslastline "%{kd} %H %{ky} load[%l] %{kg} %d.%m.%Y %c %{+k}%{yk} %=%?%-w%?[%n%f %t]%?%+w%? "
 
 # ------
 # 256 color suport
@@ -121,6 +121,6 @@ attrcolor b ".I"
 term xterm-color256
 termcapinfo xterm "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
 termcapinfo xterm-color "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
- 
+
 # erase background with current bg color
-defbce "on"
+#defbce "on"
