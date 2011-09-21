@@ -2,7 +2,12 @@
 
 
 #urxvt-256color -fn "xft:ProggyCleanTT"
-urxvt-256color -fn "7x13,xft:Consolas"
+#urxvt-256color -fn "7x13,xft:Consolas"
 
+FONT="xft:xos4 Terminus:antialias=true:pixelsize=11:hinting=true"
+FONT_BOLD="${FONT}"
 
-#urxvt-256color -fn "-xos4-terminus-medium-r-normal--14-*-*-*-*-*-iso10646-1"
+FONT="xft:ProFont:antialias=true:pixelsize=13:hinting=true"
+FONT_BOLD="${FONT}"
+
+exec urxvt-256color -fn "${FONT}" -fb "${FONT_BOLD}"
