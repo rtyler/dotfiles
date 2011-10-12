@@ -7,8 +7,11 @@ fi
 
 "$@"
 
-if [ $? -eq 0 ]; then
+STATUS=$?
+if [ $STATUS -eq 0 ]; then
     notify-send -i weather-clear -t $DELAY "Success running \`$COMMAND\`"
 else
     notify-send -i weather-storm -t $DELAY "Failed running \`$COMMAND\`"
 fi
+
+exit $STATUS
