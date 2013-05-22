@@ -2,4 +2,4 @@
 
 echo "Auto-configuring display for a single monitor"
 xrandr --output LVDS1 --auto --output VGA1 --off
-
+battdyn

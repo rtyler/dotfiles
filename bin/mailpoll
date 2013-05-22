@@ -1,5 +1,5 @@
-#!/bin/sh
+#!/bin/sh -xe
 
 source ~/envs/mail/bin/activate
 
-offlineimap;
+exec offlineimap

@@ -6,7 +6,7 @@ import sys
 import time
 
 DELAY = 20
-INBOXES = ('~/Mail/Personal/INBOX', '~/Mail/Lookout/INBOX')
+INBOXES = ('~/Mail/isync/Personal/INBOX', '~/Mail/isync/Lookout/INBOX')
 
 def notify(subject, message):
     subprocess.call(['notify-send', '-i', 'mail_new', '-t', '7000', subject, message])

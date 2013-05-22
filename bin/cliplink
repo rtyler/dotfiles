@@ -1,3 +1,19 @@
 #!/bin/sh
 
-elinks "$(xclip -o)"
+BROWSER=vimprobable2
+URL=$(xclip -o)
+
+if [ "" == "${URL}" ]; then
+    xmessage -nearmouse -timeout 2 "No URL in clipboard"
+    exit 0
+fi
+
+
+echo "Navigate to:  ${URL}" | xmessage \
+                                            -nearmouse \
+                                            -buttons "No!:1,Let's Go!:0" \
+                                            -file -
+
+if [ $? -eq 0 ]; then
+    exec ${BROWSER} ${URL}
+fi
