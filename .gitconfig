@@ -1,17 +1,18 @@
 [user]
-	name = R. Tyler Croy
-	email = tyler@monkeypox.org
-	signingkey = 3F51E16F
+    name = R. Tyler Croy
+    email = tyler@monkeypox.org
+    signingkey = 3F51E16F
 [github]
 	user = rtyler
 [pack]
     threads = 2
 [core]
     packedgitlimit = 1G
-	pager = less -R
+    pager = less -R
     excludesfile = /home/tyler/.gitignore
 [alias]
     patch = !sh -c 'git format-patch --stdout $0...$0~'
+    lolwut = !sh -c 'git show $0'
     mpatch = !sh -c 'git format-patch $0...$0~ --suffix=.patch.temp && git send-email *.patch.temp $1 && rm *.patch.temp'
     mpatchset = !sh -c 'git format-patch $0...$1 --suffix=.patch.temp && git send-email *.patch.temp $2 && rm *.patch.temp'
     btrack = !sh -c 'git fetch origin && git branch --track $0 origin/$0'
@@ -23,9 +24,9 @@
     dunique = "!f() { branch=$(git symbolic-ref HEAD | sed 's/refs\\/heads\\///g'); git diff origin/master...$branch $@; }; f"
     mergelog = "!f() { git log $2 $1^2 --not $1^1; }; f"
     pup = "!f(){ branch=$(git symbolic-ref HEAD | sed 's/refs\\/heads\\///g');git push -f $1 +${branch}:pu;}; f"
-    fetchall = "!f() { for r in .git/refs/remotes/*; do R=$(echo $r|cut -d / -f4);echo \"> Fetching from '$R'\";git fetch $R;done };f"
+    fetchall = fetch --all
     newproj = "!f() { mkdir $1 && cd $1 && git init && touch README.markdown && git add README.markdown && git commit -m 'Initial commit' && echo && echo 'Project created';}; f"
-    st = status
+    st = status -sb
     ci = commit -v
     br = branch
     co = checkout
@@ -35,9 +36,10 @@
 
     #log
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    recent = "!f() { git lg -n 10 | cat; echo; }; f"
     rlog = log --reverse
     flg = log -M --summary --stat --date=relative --abbrev-commit
-    plg = log -p
+    plg = log --graph --pretty=oneline --abbrev-commit --decorate --color --all
 
     #diff
     changes=diff --name-status -r
@@ -72,3 +74,9 @@
     tool = vimdiff
 [difftool]
     prompt = false
+[tig "color"]
+    title-blur = white black
+    title-focus = white black
+    cursor = red default underline
+[push]
+	default = matching
