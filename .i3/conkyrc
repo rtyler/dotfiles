@@ -1,0 +1,20 @@
+background        no
+out_to_console    yes
+out_to_x	  no
+update_interval	  2
+total_run_times	  0
+short_units	  yes
+pad_percents	  3
+
+if_up_strictness link
+override_utf8_locale yes
+
+TEXT
+,[{"full_text": " ▣ ${execi 5 sensors | grep Core | cut -c16-19 | head -n1}°C [$cpu%] (${freq_g}) ","color": "\#DC6161"},
+  {"full_text": " ≣ ${memperc}% ", "color":"\#B58900"},
+  {"full_text": "${if_up wlan0} ≈ ${wireless_essid wlan0} (${addr wlan0}) [${wireless_link_qual_perc wlan0}%] ${endif}","color":"\#33CC99"},
+  {"full_text": "${if_up eth0} » ${addr eth0} ${endif}","color":"\#33CC99"},
+  {"full_text": " ☇ [$battery_short] ","color":"\#9B62CC"},
+  {"full_text": " ♪ [$mixer%] ", "color":"\#268BD2"},
+  {"full_text": " ${time %d %b} / PDT ${time %H:%M} / UTC ${tztime Europe/UTC %H:%M}"}
+]
